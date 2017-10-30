@@ -16,6 +16,7 @@ import java.util.concurrent.ConcurrentMap;
  *
  */
 public class HomeTest {
+    /*
      @Test(description = "测试数据库的读取")
     public void wm_101()
      {
@@ -63,6 +64,7 @@ public class HomeTest {
          redisson.shutdown();
 
      }
+     */
      @Test(groups = "1")
     public  void wm_104()
      {

@@ -2,6 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="test">
     <test name="smoke" verbose="1">
+        <groups>
+            <define name="1all">
+                <include name="1"></include>
+            </define>
+            <define name="2all">
+                <include name="2"></include>
+            </define>
+        </groups>
         <classes>
             <class name="HomeTest"></class>
         </classes>
