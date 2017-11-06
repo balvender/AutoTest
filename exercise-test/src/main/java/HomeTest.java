@@ -10,8 +10,8 @@ import util.HttpUtil;
  *
  */
 public class HomeTest {
-     @Test(groups = "1")
-    public  void wm_104()
+     @Test
+    public void wm_104()
      {
          HttpUtil util = new HttpUtil();
          MTRequest mtRequest = new MTRequest();
