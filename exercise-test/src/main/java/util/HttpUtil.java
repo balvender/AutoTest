@@ -16,6 +16,7 @@ import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -27,8 +28,10 @@ import java.util.Properties;
  * Created by LiXuan on 2017/11/2.
  */
 public class HttpUtil {
+    public static Logger logger = Logger.getLogger(HttpUtil.class);
     public <T> String doGet(T para){
         String url = getUrl(para,para.getClass());
+        System.out.println("url:"+url);
         HttpGet httpGet = new HttpGet(url);
         httpGet.setHeader("Content-Type","application/json; charset=utf-8");
         CloseableHttpClient httpClient = getHttpClient();
@@ -36,6 +39,7 @@ public class HttpUtil {
         try {
             CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
             result = EntityUtils.toString(httpResponse.getEntity());
+            System.out.println(result);
         } catch (IOException e) {
             e.printStackTrace();
         }
