@@ -140,35 +140,29 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/profile/dev</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                </resources>
-            </build>
+            <properties>
+                <profiles.activation>dev</profiles.activation>
+            </properties>
         </profile>
         <profile>
             <id>stage</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/profile/stage</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                </resources>
-            </build>
+            <properties>
+                <profiles.activation>stage</profiles.activation>
+            </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
         </profile>
     </profiles>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/profile/${profiles.activation}</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
