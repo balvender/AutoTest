@@ -106,56 +106,50 @@
             <artifactId>spring-webmvc</artifactId>
             <version>4.3.1.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5</version>
+        </dependency>
     </dependencies>
     <profiles>
         <profile>
-            <id>test</id>
+            <id>dev</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <build>
                 <resources>
                     <resource>
-                        <directory>src/main/profile/test</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/profile/offline</directory>
-                    </resource>
-                </resources>
-            </build>
-        </profile>
-        <profile>
-            <id>beta</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/profile/beta</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/profile/offline</directory>
+                        <directory>src/main/profile/dev</directory>
                     </resource>
                 </resources>
             </build>
         </profile>
         <profile>
             <id>stage</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
             <build>
                 <resources>
                     <resource>
                         <directory>src/main/profile/stage</directory>
                     </resource>
-                    <resource>
-                        <directory>src/main/profile/online</directory>
-                    </resource>
                 </resources>
             </build>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
         </profile>
     </profiles>
     <build>
