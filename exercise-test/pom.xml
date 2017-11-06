@@ -135,6 +135,9 @@
                     <resource>
                         <directory>src/main/profile/dev</directory>
                     </resource>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
                 </resources>
             </build>
         </profile>
@@ -144,6 +147,9 @@
                 <resources>
                     <resource>
                         <directory>src/main/profile/stage</directory>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources</directory>
                     </resource>
                 </resources>
             </build>
