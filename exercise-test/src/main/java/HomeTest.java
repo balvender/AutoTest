@@ -1,5 +1,6 @@
 import RequestPara.MTRequest;
 import org.testng.annotations.Test;
+import util.AssertUtil;
 import util.HttpUtil;
 
 /**
@@ -14,15 +15,7 @@ public class HomeTest {
      {
          HttpUtil util = new HttpUtil();
          MTRequest mtRequest = new MTRequest();
-         System.out.println(util.doGet(mtRequest));
+         AssertUtil.isEqual("$.code","$.code",util.doGet(mtRequest));
      }
-     @Test(groups = "2")
-    public void wm_105()
-     {
-         System.out.println("This is case2");
-     }
-     @Test(description = "beta环境美团官网校验")
-    public void wm_meituan(){
 
-     }
 }
