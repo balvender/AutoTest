@@ -7,4 +7,9 @@
             <include name="stage"></include>
         </run>
     </groups>
+    <test name="test">
+        <classes>
+            <class name="HomeTest"></class>
+        </classes>
+    </test>
 </suite>

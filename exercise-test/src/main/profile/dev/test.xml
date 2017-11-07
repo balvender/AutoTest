@@ -7,4 +7,9 @@
             <exclude name="stage"></exclude>
         </run>
     </groups>
+    <test name="test">
+        <classes>
+            <class name="HomeTest"></class>
+        </classes>
+    </test>
 </suite>
