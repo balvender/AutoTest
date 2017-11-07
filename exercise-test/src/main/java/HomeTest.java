@@ -11,14 +11,14 @@ import util.HttpUtil;
  *
  */
 public class HomeTest {
-    @Test
+    @Test(groups = {"dev"})
     public void meituan() {
          HttpUtil util = new HttpUtil();
          MTRequest mtRequest = new MTRequest();
          AssertUtil.isEqual("$.code","$.code",util.doGet(mtRequest));
     }
 
-    @Test
+    @Test(groups = {"stage"})
     public void dianpin(){
          HttpUtil util = new HttpUtil();
          DPRequest dpRequest = new DPRequest();

@@ -169,7 +169,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/main/resources/test.xml</suiteXmlFile>
+                        <suiteXmlFile>src/main/profile/${profiles.activation}/test.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
