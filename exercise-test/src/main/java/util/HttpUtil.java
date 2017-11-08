@@ -84,10 +84,12 @@ public class HttpUtil {
         return httpClient;
     }
 
+    //拼接URL
     private <T> String getUrl(T obj,Class<?> cl){
         try {
             StringBuffer url = new StringBuffer();
             url.append(getPropertyValue("host"));
+            //通过反射获取注解中的网址
             RequestAnnotation annotation = cl.getAnnotation(RequestAnnotation.class);
             url.append(annotation.uri() + "?");
             Field[] fs = cl.getDeclaredFields();
@@ -105,6 +107,7 @@ public class HttpUtil {
         return null;
     }
 
+    //从不同的配置文件中获取网址
     public String getPropertyValue(String key) {
         Properties properties=new Properties();
         FileInputStream fileInputStream;

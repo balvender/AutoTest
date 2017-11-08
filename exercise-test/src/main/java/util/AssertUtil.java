@@ -12,7 +12,9 @@ import java.util.List;
  */
 public class AssertUtil {
     public static void isEqual(String prePath,String resPath,String resJson){
+        //真实值
         Object res = JsonPath.read(resJson,resPath);
+        //期待值
         Object pre = JsonPath.read(getJsonFile(),prePath);
         Assert.assertEquals(pre,res);
     }
